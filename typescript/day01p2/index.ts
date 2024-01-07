@@ -12,13 +12,18 @@ for await (const line of lines) {
             top_three.push(curr)
         } else {
             const i = top_three.findIndex(val => val < curr)
+
             if (i >= 0) {
                 top_three.splice(i, 0, curr)
-                if (top_three.length > 3) {
-                    top_three.pop()
-                }
+            } else {
+                top_three.push(curr)
+            }
+
+            if (top_three.length > 3) {
+                top_three.pop()
             }
         }
+
         curr = 0
     } else {
         curr += parseInt(line)
