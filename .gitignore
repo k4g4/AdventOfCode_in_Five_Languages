@@ -1,3 +1,3 @@
 .vscode
-c-sharp/*/bin
-c-sharp/*/obj
+# c-sharp/*/bin
+# c-sharp/*/obj
