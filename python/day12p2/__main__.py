@@ -6,12 +6,12 @@ from dataclasses import dataclass
 time = perf_counter_ns()
 
 START, END = -1, 26
+MAX_DIST = 1_000
 
 @dataclass
 class Tile:
     height: int
-    visited: bool = False
-    dist: int = 0
+    dist: int = MAX_DIST
 
 def tile_from_char(c: str) -> Tile:
     try:
@@ -27,7 +27,7 @@ def tile_from_char(c: str) -> Tile:
 def parse_tiles(lines: Iterable[str]) -> list[list[Tile]]:
     return [[tile_from_char(c) for c in line] for line in lines]
 
-with open('input') as input_file:
+with open('example') as input_file:
     tiles = parse_tiles(map(lambda line: line.strip(), input_file))
 
     type Probe = tuple[int, int]
@@ -37,10 +37,11 @@ with open('input') as input_file:
         for j, tile in enumerate(row):
             if tile.height == START:
                 probes.append((i, j))
+                tile.dist = 0
 
     offsets: list[Probe] = [(-1, 0), (1, 0), (0, -1), (0, 1)]
-    result: Optional[int] = None
-    while result is None:
+    result: int = MAX_DIST
+    while probes:
         for probe in probes:
             tile = tiles[probe[0]][probe[1]]
 
@@ -50,20 +51,16 @@ with open('input') as input_file:
                 if 0 <= i < len(tiles) and 0 <= j < len(tiles[0]):
                     neighbor = tiles[i][j]
 
-                    if not neighbor.visited and neighbor.height <= tile.height + 1:
-                        neighbor.visited = True
-                        neighbor.dist = tile.dist + 1
+                    if neighbor.dist > tile.dist + 1 and neighbor.height <= tile.height + 1:
+                        neighbor.dist = tile.dist + (1 if neighbor.height > START + 1 else 0)
                         new_probes.append((i, j))
 
                         if neighbor.height == END:
-                            if result is not None:
-                                result = min(result, neighbor.dist)
-                            else:
-                                result = neighbor.dist
+                            result = min(result, neighbor.dist)
 
         probes, new_probes = new_probes, probes
         new_probes.clear()
 
-    print(f'from S to E: {result}')
+    print(f'from closest a to E: {result}')
 
 print(f'elapsed: {(perf_counter_ns() - time) / 1_000_000} ms')
