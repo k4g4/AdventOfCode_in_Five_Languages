@@ -1,4 +1,3 @@
-from typing import Optional
 from time import perf_counter_ns
 from functools import cmp_to_key
 
