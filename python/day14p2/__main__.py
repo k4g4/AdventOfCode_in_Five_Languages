@@ -95,6 +95,6 @@ while not complete:
             break
 
 # cave.print()
-print(cave.sand_count())
+print(f'sand count: {cave.sand_count()}')
 
 print(f'elapsed: {(perf_counter_ns() - time) / 1_000_000} ms')
