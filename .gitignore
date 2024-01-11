@@ -1,3 +1,5 @@
 .vscode
 c-sharp/*/bin
 c-sharp/*/obj
+main
+.clang-format

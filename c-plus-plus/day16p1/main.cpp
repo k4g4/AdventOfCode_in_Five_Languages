@@ -14,7 +14,7 @@ using namespace std;
 using namespace std::chrono;
 
 struct Name : array<char, 2> {
-    Name(const smatch& match) {
+    Name(const smatch &match) {
         (*this)[0] = *match[0].first;
         (*this)[1] = *(match[0].first + 1);
     }
@@ -22,12 +22,12 @@ struct Name : array<char, 2> {
 
 template <>
 struct std::hash<Name> {
-    size_t operator()(const Name& name) const noexcept {
-        return hash<char>{}(name[0]) ^ (hash<char>{}(name[1]));
+    size_t operator()(const Name &name) const noexcept {
+        return hash<char>{}(name[0]) ^ (hash<char>{}(name[1]) << 1);
     }
 };
 
-ostream& operator<<(ostream& os, const Name& name) {
+ostream &operator<<(ostream &os, const Name &name) {
     return os << name[0] << name[1];
 }
 
@@ -36,18 +36,19 @@ struct Valve {
     vector<Name> tunnels;
 };
 
-ostream& operator<<(ostream& os, const Valve& valve) {
+ostream &operator<<(ostream &os, const Valve &valve) {
     os << "flow rate: " << valve.flowRate << " tunnels: '";
-    for (const auto& name : valve.tunnels) {
+    for (const auto &name : valve.tunnels) {
         os << name << ", ";
     }
     return os << "'";
 }
 
-uint recurse(const unordered_map<Name, Valve>& valves, Name currentValve,
+uint recurse(const unordered_map<Name, Valve> &valves, Name currentValveName,
              unordered_set<Name> released, uint currentFlow, size_t currentHash,
              unordered_map<size_t, uint> memo) {
-    //
+    auto newHash = currentHash ^ (std::hash<Name>{}(currentValveName) << 1);
+    return 0;
 }
 
 int main() {
@@ -80,7 +81,7 @@ int main() {
         valves[name] = move(valve);
     }
 
-    for (const auto& nameAndValve : valves) {
+    for (const auto &nameAndValve : valves) {
         cout << "name: " << nameAndValve.first << "\nvalve:\n"
              << nameAndValve.second << '\n';
     }
