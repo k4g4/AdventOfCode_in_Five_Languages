@@ -51,10 +51,14 @@ flow_t recurse(const unordered_map<Name, Valve> &valves, Name currentValveName,
                unordered_set<Name> released, flow_t currentFlowRate,
                flow_t currentFlow, uint minutesRemaining, size_t currentHash,
                unordered_map<size_t, flow_t> &memo) {
-    ofstream{"out", std::ios::app}
-        << "at: " << currentValveName << "\nwith flow: " << currentFlow
+    ofstream out{"out", std::ios::app};
+    out << "at: " << currentValveName << "\nwith flow: " << currentFlow
         << "\nflow rate: " << currentFlowRate << "\nmins: " << minutesRemaining
-        << "\n\n";
+        << "\nreleased: ";
+    for (auto name : released) {
+        out << name << ", ";
+    }
+    out << "\n\n";
     decltype(memo.cbegin()) memory;
     if ((memory = memo.find(currentHash)) != memo.cend()) {
         return memory->second;
