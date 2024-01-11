@@ -1,0 +1,1875 @@
+at: AA
+with flow: 0
+flow rate: 0
+mins: 30
+
+at: DD
+with flow: 0
+flow rate: 0
+mins: 29
+
+at: CC
+with flow: 0
+flow rate: 0
+mins: 28
+
+at: DD
+with flow: 0
+flow rate: 0
+mins: 27
+
+at: CC
+with flow: 0
+flow rate: 0
+mins: 26
+
+at: DD
+with flow: 0
+flow rate: 0
+mins: 25
+
+at: CC
+with flow: 0
+flow rate: 0
+mins: 24
+
+at: DD
+with flow: 0
+flow rate: 0
+mins: 23
+
+at: CC
+with flow: 0
+flow rate: 0
+mins: 22
+
+at: DD
+with flow: 0
+flow rate: 0
+mins: 21
+
+at: CC
+with flow: 0
+flow rate: 0
+mins: 20
+
+at: DD
+with flow: 0
+flow rate: 0
+mins: 19
+
+at: CC
+with flow: 0
+flow rate: 0
+mins: 18
+
+at: DD
+with flow: 0
+flow rate: 0
+mins: 17
+
+at: CC
+with flow: 0
+flow rate: 0
+mins: 16
+
+at: DD
+with flow: 0
+flow rate: 0
+mins: 15
+
+at: CC
+with flow: 0
+flow rate: 0
+mins: 14
+
+at: DD
+with flow: 0
+flow rate: 0
+mins: 13
+
+at: CC
+with flow: 0
+flow rate: 0
+mins: 12
+
+at: DD
+with flow: 0
+flow rate: 0
+mins: 11
+
+at: CC
+with flow: 0
+flow rate: 0
+mins: 10
+
+at: DD
+with flow: 0
+flow rate: 0
+mins: 9
+
+at: CC
+with flow: 0
+flow rate: 0
+mins: 8
+
+at: DD
+with flow: 0
+flow rate: 0
+mins: 7
+
+at: CC
+with flow: 0
+flow rate: 0
+mins: 6
+
+at: DD
+with flow: 0
+flow rate: 0
+mins: 5
+
+at: CC
+with flow: 0
+flow rate: 0
+mins: 4
+
+at: DD
+with flow: 0
+flow rate: 0
+mins: 3
+
+at: CC
+with flow: 0
+flow rate: 0
+mins: 2
+
+at: DD
+with flow: 0
+flow rate: 0
+mins: 1
+
+at: BB
+with flow: 0
+flow rate: 0
+mins: 1
+
+at: CC
+with flow: 0
+flow rate: 2
+mins: 1
+
+at: AA
+with flow: 0
+flow rate: 0
+mins: 2
+
+at: DD
+with flow: 0
+flow rate: 0
+mins: 1
+
+at: II
+with flow: 0
+flow rate: 0
+mins: 1
+
+at: BB
+with flow: 0
+flow rate: 0
+mins: 1
+
+at: AA
+with flow: 0
+flow rate: 0
+mins: 1
+
+at: EE
+with flow: 0
+flow rate: 0
+mins: 2
+
+at: FF
+with flow: 0
+flow rate: 0
+mins: 1
+
+at: DD
+with flow: 0
+flow rate: 0
+mins: 1
+
+at: EE
+with flow: 0
+flow rate: 3
+mins: 1
+
+at: DD
+with flow: 0
+flow rate: 20
+mins: 2
+
+at: CC
+with flow: 20
+flow rate: 20
+mins: 1
+
+at: AA
+with flow: 20
+flow rate: 20
+mins: 1
+
+at: EE
+with flow: 20
+flow rate: 20
+mins: 1
+
+at: BB
+with flow: 0
+flow rate: 0
+mins: 3
+
+at: CC
+with flow: 0
+flow rate: 0
+mins: 2
+
+at: AA
+with flow: 0
+flow rate: 0
+mins: 2
+
+at: DD
+with flow: 0
+flow rate: 0
+mins: 1
+
+at: II
+with flow: 0
+flow rate: 0
+mins: 1
+
+at: BB
+with flow: 0
+flow rate: 0
+mins: 1
+
+at: AA
+with flow: 0
+flow rate: 0
+mins: 1
+
+at: BB
+with flow: 0
+flow rate: 13
+mins: 2
+
+at: CC
+with flow: 13
+flow rate: 13
+mins: 1
+
+at: AA
+with flow: 13
+flow rate: 13
+mins: 1
+
+at: CC
+with flow: 0
+flow rate: 2
+mins: 3
+
+at: DD
+with flow: 2
+flow rate: 2
+mins: 2
+
+at: CC
+with flow: 4
+flow rate: 2
+mins: 1
+
+at: AA
+with flow: 4
+flow rate: 2
+mins: 1
+
+at: EE
+with flow: 4
+flow rate: 2
+mins: 1
+
+at: DD
+with flow: 4
+flow rate: 22
+mins: 1
+
+at: BB
+with flow: 2
+flow rate: 2
+mins: 2
+
+at: CC
+with flow: 4
+flow rate: 2
+mins: 1
+
+at: AA
+with flow: 4
+flow rate: 2
+mins: 1
+
+at: BB
+with flow: 4
+flow rate: 15
+mins: 1
+
+at: AA
+with flow: 0
+flow rate: 0
+mins: 4
+
+at: DD
+with flow: 0
+flow rate: 0
+mins: 3
+
+at: CC
+with flow: 0
+flow rate: 0
+mins: 2
+
+at: AA
+with flow: 0
+flow rate: 0
+mins: 2
+
+at: EE
+with flow: 0
+flow rate: 0
+mins: 2
+
+at: DD
+with flow: 0
+flow rate: 20
+mins: 2
+
+at: CC
+with flow: 20
+flow rate: 20
+mins: 1
+
+at: AA
+with flow: 20
+flow rate: 20
+mins: 1
+
+at: EE
+with flow: 20
+flow rate: 20
+mins: 1
+
+at: II
+with flow: 0
+flow rate: 0
+mins: 3
+
+at: AA
+with flow: 0
+flow rate: 0
+mins: 2
+
+at: DD
+with flow: 0
+flow rate: 0
+mins: 1
+
+at: II
+with flow: 0
+flow rate: 0
+mins: 1
+
+at: BB
+with flow: 0
+flow rate: 0
+mins: 1
+
+at: AA
+with flow: 0
+flow rate: 0
+mins: 1
+
+at: JJ
+with flow: 0
+flow rate: 0
+mins: 2
+
+at: II
+with flow: 0
+flow rate: 0
+mins: 2
+
+at: AA
+with flow: 0
+flow rate: 0
+mins: 1
+
+at: JJ
+with flow: 0
+flow rate: 0
+mins: 1
+
+at: BB
+with flow: 0
+flow rate: 0
+mins: 3
+
+at: CC
+with flow: 0
+flow rate: 0
+mins: 2
+
+at: AA
+with flow: 0
+flow rate: 0
+mins: 2
+
+at: BB
+with flow: 0
+flow rate: 13
+mins: 2
+
+at: CC
+with flow: 13
+flow rate: 13
+mins: 1
+
+at: AA
+with flow: 13
+flow rate: 13
+mins: 1
+
+at: AA
+with flow: 0
+flow rate: 0
+mins: 3
+
+at: DD
+with flow: 0
+flow rate: 0
+mins: 2
+
+at: CC
+with flow: 0
+flow rate: 0
+mins: 1
+
+at: AA
+with flow: 0
+flow rate: 0
+mins: 1
+
+at: EE
+with flow: 0
+flow rate: 0
+mins: 1
+
+at: DD
+with flow: 0
+flow rate: 20
+mins: 1
+
+at: II
+with flow: 0
+flow rate: 0
+mins: 2
+
+at: AA
+with flow: 0
+flow rate: 0
+mins: 1
+
+at: JJ
+with flow: 0
+flow rate: 0
+mins: 1
+
+at: II
+with flow: 0
+flow rate: 0
+mins: 1
+
+at: BB
+with flow: 0
+flow rate: 0
+mins: 2
+
+at: CC
+with flow: 0
+flow rate: 0
+mins: 1
+
+at: AA
+with flow: 0
+flow rate: 0
+mins: 1
+
+at: BB
+with flow: 0
+flow rate: 13
+mins: 1
+
+at: EE
+with flow: 0
+flow rate: 0
+mins: 4
+
+at: FF
+with flow: 0
+flow rate: 0
+mins: 3
+
+at: DD
+with flow: 0
+flow rate: 0
+mins: 3
+
+at: EE
+with flow: 0
+flow rate: 3
+mins: 3
+
+at: FF
+with flow: 3
+flow rate: 3
+mins: 2
+
+at: EE
+with flow: 6
+flow rate: 3
+mins: 1
+
+at: GG
+with flow: 6
+flow rate: 3
+mins: 1
+
+at: FF
+with flow: 6
+flow rate: 3
+mins: 1
+
+at: DD
+with flow: 3
+flow rate: 3
+mins: 2
+
+at: DD
+with flow: 0
+flow rate: 20
+mins: 4
+
+at: BB
+with flow: 0
+flow rate: 0
+mins: 5
+
+at: CC
+with flow: 0
+flow rate: 0
+mins: 4
+
+at: AA
+with flow: 0
+flow rate: 0
+mins: 4
+
+at: DD
+with flow: 0
+flow rate: 0
+mins: 3
+
+at: II
+with flow: 0
+flow rate: 0
+mins: 3
+
+at: AA
+with flow: 0
+flow rate: 0
+mins: 2
+
+at: DD
+with flow: 0
+flow rate: 0
+mins: 1
+
+at: II
+with flow: 0
+flow rate: 0
+mins: 1
+
+at: BB
+with flow: 0
+flow rate: 0
+mins: 1
+
+at: AA
+with flow: 0
+flow rate: 0
+mins: 1
+
+at: JJ
+with flow: 0
+flow rate: 0
+mins: 2
+
+at: II
+with flow: 0
+flow rate: 0
+mins: 2
+
+at: AA
+with flow: 0
+flow rate: 0
+mins: 1
+
+at: JJ
+with flow: 0
+flow rate: 0
+mins: 1
+
+at: BB
+with flow: 0
+flow rate: 0
+mins: 3
+
+at: AA
+with flow: 0
+flow rate: 0
+mins: 3
+
+at: BB
+with flow: 0
+flow rate: 13
+mins: 4
+
+at: CC
+with flow: 0
+flow rate: 2
+mins: 5
+
+at: DD
+with flow: 2
+flow rate: 2
+mins: 4
+
+at: BB
+with flow: 2
+flow rate: 2
+mins: 4
+
+at: CC
+with flow: 4
+flow rate: 2
+mins: 3
+
+at: DD
+with flow: 6
+flow rate: 2
+mins: 2
+
+at: BB
+with flow: 6
+flow rate: 2
+mins: 2
+
+at: AA
+with flow: 4
+flow rate: 2
+mins: 3
+
+at: DD
+with flow: 6
+flow rate: 2
+mins: 2
+
+at: CC
+with flow: 8
+flow rate: 2
+mins: 1
+
+at: AA
+with flow: 8
+flow rate: 2
+mins: 1
+
+at: EE
+with flow: 8
+flow rate: 2
+mins: 1
+
+at: DD
+with flow: 8
+flow rate: 22
+mins: 1
+
+at: II
+with flow: 6
+flow rate: 2
+mins: 2
+
+at: AA
+with flow: 8
+flow rate: 2
+mins: 1
+
+at: JJ
+with flow: 8
+flow rate: 2
+mins: 1
+
+at: II
+with flow: 8
+flow rate: 2
+mins: 1
+
+at: BB
+with flow: 6
+flow rate: 2
+mins: 2
+
+at: CC
+with flow: 8
+flow rate: 2
+mins: 1
+
+at: AA
+with flow: 8
+flow rate: 2
+mins: 1
+
+at: BB
+with flow: 8
+flow rate: 15
+mins: 1
+
+at: AA
+with flow: 6
+flow rate: 2
+mins: 2
+
+at: BB
+with flow: 4
+flow rate: 15
+mins: 3
+
+at: CC
+with flow: 19
+flow rate: 15
+mins: 2
+
+at: DD
+with flow: 34
+flow rate: 15
+mins: 1
+
+at: BB
+with flow: 34
+flow rate: 15
+mins: 1
+
+at: AA
+with flow: 19
+flow rate: 15
+mins: 2
+
+at: DD
+with flow: 34
+flow rate: 15
+mins: 1
+
+at: II
+with flow: 34
+flow rate: 15
+mins: 1
+
+at: BB
+with flow: 34
+flow rate: 15
+mins: 1
+
+at: AA
+with flow: 34
+flow rate: 15
+mins: 1
+
+at: AA
+with flow: 0
+flow rate: 0
+mins: 6
+
+at: EE
+with flow: 0
+flow rate: 0
+mins: 6
+
+at: DD
+with flow: 0
+flow rate: 20
+mins: 6
+
+at: BB
+with flow: 0
+flow rate: 0
+mins: 7
+
+at: CC
+with flow: 0
+flow rate: 2
+mins: 7
+
+at: AA
+with flow: 0
+flow rate: 0
+mins: 8
+
+at: EE
+with flow: 0
+flow rate: 0
+mins: 8
+
+at: DD
+with flow: 0
+flow rate: 20
+mins: 8
+
+at: BB
+with flow: 0
+flow rate: 0
+mins: 9
+
+at: CC
+with flow: 0
+flow rate: 2
+mins: 9
+
+at: AA
+with flow: 0
+flow rate: 0
+mins: 10
+
+at: EE
+with flow: 0
+flow rate: 0
+mins: 10
+
+at: DD
+with flow: 0
+flow rate: 20
+mins: 10
+
+at: BB
+with flow: 0
+flow rate: 0
+mins: 11
+
+at: CC
+with flow: 0
+flow rate: 2
+mins: 11
+
+at: AA
+with flow: 0
+flow rate: 0
+mins: 12
+
+at: EE
+with flow: 0
+flow rate: 0
+mins: 12
+
+at: DD
+with flow: 0
+flow rate: 20
+mins: 12
+
+at: BB
+with flow: 0
+flow rate: 0
+mins: 13
+
+at: CC
+with flow: 0
+flow rate: 2
+mins: 13
+
+at: AA
+with flow: 0
+flow rate: 0
+mins: 14
+
+at: EE
+with flow: 0
+flow rate: 0
+mins: 14
+
+at: DD
+with flow: 0
+flow rate: 20
+mins: 14
+
+at: BB
+with flow: 0
+flow rate: 0
+mins: 15
+
+at: CC
+with flow: 0
+flow rate: 2
+mins: 15
+
+at: AA
+with flow: 0
+flow rate: 0
+mins: 16
+
+at: EE
+with flow: 0
+flow rate: 0
+mins: 16
+
+at: DD
+with flow: 0
+flow rate: 20
+mins: 16
+
+at: BB
+with flow: 0
+flow rate: 0
+mins: 17
+
+at: CC
+with flow: 0
+flow rate: 2
+mins: 17
+
+at: AA
+with flow: 0
+flow rate: 0
+mins: 18
+
+at: EE
+with flow: 0
+flow rate: 0
+mins: 18
+
+at: DD
+with flow: 0
+flow rate: 20
+mins: 18
+
+at: BB
+with flow: 0
+flow rate: 0
+mins: 19
+
+at: CC
+with flow: 0
+flow rate: 2
+mins: 19
+
+at: AA
+with flow: 0
+flow rate: 0
+mins: 20
+
+at: EE
+with flow: 0
+flow rate: 0
+mins: 20
+
+at: DD
+with flow: 0
+flow rate: 20
+mins: 20
+
+at: BB
+with flow: 0
+flow rate: 0
+mins: 21
+
+at: CC
+with flow: 0
+flow rate: 2
+mins: 21
+
+at: AA
+with flow: 0
+flow rate: 0
+mins: 22
+
+at: EE
+with flow: 0
+flow rate: 0
+mins: 22
+
+at: DD
+with flow: 0
+flow rate: 20
+mins: 22
+
+at: BB
+with flow: 0
+flow rate: 0
+mins: 23
+
+at: CC
+with flow: 0
+flow rate: 2
+mins: 23
+
+at: AA
+with flow: 0
+flow rate: 0
+mins: 24
+
+at: EE
+with flow: 0
+flow rate: 0
+mins: 24
+
+at: DD
+with flow: 0
+flow rate: 20
+mins: 24
+
+at: BB
+with flow: 0
+flow rate: 0
+mins: 25
+
+at: CC
+with flow: 0
+flow rate: 2
+mins: 25
+
+at: AA
+with flow: 0
+flow rate: 0
+mins: 26
+
+at: EE
+with flow: 0
+flow rate: 0
+mins: 26
+
+at: DD
+with flow: 0
+flow rate: 20
+mins: 26
+
+at: BB
+with flow: 0
+flow rate: 0
+mins: 27
+
+at: CC
+with flow: 0
+flow rate: 2
+mins: 27
+
+at: AA
+with flow: 0
+flow rate: 0
+mins: 28
+
+at: EE
+with flow: 0
+flow rate: 0
+mins: 28
+
+at: DD
+with flow: 0
+flow rate: 20
+mins: 28
+
+at: II
+with flow: 0
+flow rate: 0
+mins: 29
+
+at: AA
+with flow: 0
+flow rate: 0
+mins: 28
+
+at: DD
+with flow: 0
+flow rate: 0
+mins: 27
+
+at: II
+with flow: 0
+flow rate: 0
+mins: 27
+
+at: BB
+with flow: 0
+flow rate: 0
+mins: 27
+
+at: AA
+with flow: 0
+flow rate: 0
+mins: 27
+
+at: DD
+with flow: 0
+flow rate: 0
+mins: 26
+
+at: II
+with flow: 0
+flow rate: 0
+mins: 26
+
+at: BB
+with flow: 0
+flow rate: 0
+mins: 26
+
+at: CC
+with flow: 0
+flow rate: 0
+mins: 25
+
+at: DD
+with flow: 0
+flow rate: 0
+mins: 24
+
+at: CC
+with flow: 0
+flow rate: 0
+mins: 23
+
+at: DD
+with flow: 0
+flow rate: 0
+mins: 22
+
+at: CC
+with flow: 0
+flow rate: 0
+mins: 21
+
+at: DD
+with flow: 0
+flow rate: 0
+mins: 20
+
+at: CC
+with flow: 0
+flow rate: 0
+mins: 19
+
+at: DD
+with flow: 0
+flow rate: 0
+mins: 18
+
+at: CC
+with flow: 0
+flow rate: 0
+mins: 17
+
+at: DD
+with flow: 0
+flow rate: 0
+mins: 16
+
+at: CC
+with flow: 0
+flow rate: 0
+mins: 15
+
+at: DD
+with flow: 0
+flow rate: 0
+mins: 14
+
+at: CC
+with flow: 0
+flow rate: 0
+mins: 13
+
+at: DD
+with flow: 0
+flow rate: 0
+mins: 12
+
+at: CC
+with flow: 0
+flow rate: 0
+mins: 11
+
+at: DD
+with flow: 0
+flow rate: 0
+mins: 10
+
+at: CC
+with flow: 0
+flow rate: 0
+mins: 9
+
+at: DD
+with flow: 0
+flow rate: 0
+mins: 8
+
+at: CC
+with flow: 0
+flow rate: 0
+mins: 7
+
+at: DD
+with flow: 0
+flow rate: 0
+mins: 6
+
+at: CC
+with flow: 0
+flow rate: 0
+mins: 5
+
+at: DD
+with flow: 0
+flow rate: 0
+mins: 4
+
+at: CC
+with flow: 0
+flow rate: 0
+mins: 3
+
+at: DD
+with flow: 0
+flow rate: 0
+mins: 2
+
+at: CC
+with flow: 0
+flow rate: 0
+mins: 1
+
+at: AA
+with flow: 0
+flow rate: 0
+mins: 1
+
+at: EE
+with flow: 0
+flow rate: 0
+mins: 1
+
+at: DD
+with flow: 0
+flow rate: 20
+mins: 1
+
+at: BB
+with flow: 0
+flow rate: 0
+mins: 2
+
+at: CC
+with flow: 0
+flow rate: 2
+mins: 2
+
+at: DD
+with flow: 2
+flow rate: 2
+mins: 1
+
+at: BB
+with flow: 2
+flow rate: 2
+mins: 1
+
+at: AA
+with flow: 0
+flow rate: 0
+mins: 3
+
+at: DD
+with flow: 0
+flow rate: 0
+mins: 2
+
+at: II
+with flow: 0
+flow rate: 0
+mins: 2
+
+at: BB
+with flow: 0
+flow rate: 0
+mins: 2
+
+at: EE
+with flow: 0
+flow rate: 0
+mins: 3
+
+at: FF
+with flow: 0
+flow rate: 0
+mins: 2
+
+at: DD
+with flow: 0
+flow rate: 0
+mins: 2
+
+at: EE
+with flow: 0
+flow rate: 3
+mins: 2
+
+at: FF
+with flow: 3
+flow rate: 3
+mins: 1
+
+at: DD
+with flow: 3
+flow rate: 3
+mins: 1
+
+at: DD
+with flow: 0
+flow rate: 20
+mins: 3
+
+at: CC
+with flow: 20
+flow rate: 20
+mins: 2
+
+at: DD
+with flow: 40
+flow rate: 20
+mins: 1
+
+at: BB
+with flow: 40
+flow rate: 20
+mins: 1
+
+at: CC
+with flow: 40
+flow rate: 22
+mins: 1
+
+at: AA
+with flow: 20
+flow rate: 20
+mins: 2
+
+at: DD
+with flow: 40
+flow rate: 20
+mins: 1
+
+at: II
+with flow: 40
+flow rate: 20
+mins: 1
+
+at: BB
+with flow: 40
+flow rate: 20
+mins: 1
+
+at: EE
+with flow: 20
+flow rate: 20
+mins: 2
+
+at: FF
+with flow: 40
+flow rate: 20
+mins: 1
+
+at: DD
+with flow: 40
+flow rate: 20
+mins: 1
+
+at: EE
+with flow: 40
+flow rate: 23
+mins: 1
+
+at: BB
+with flow: 0
+flow rate: 0
+mins: 4
+
+at: CC
+with flow: 0
+flow rate: 2
+mins: 4
+
+at: DD
+with flow: 2
+flow rate: 2
+mins: 3
+
+at: BB
+with flow: 2
+flow rate: 2
+mins: 3
+
+at: AA
+with flow: 0
+flow rate: 0
+mins: 5
+
+at: DD
+with flow: 0
+flow rate: 0
+mins: 4
+
+at: CC
+with flow: 0
+flow rate: 0
+mins: 3
+
+at: AA
+with flow: 0
+flow rate: 0
+mins: 3
+
+at: EE
+with flow: 0
+flow rate: 0
+mins: 3
+
+at: FF
+with flow: 0
+flow rate: 0
+mins: 2
+
+at: DD
+with flow: 0
+flow rate: 0
+mins: 2
+
+at: EE
+with flow: 0
+flow rate: 3
+mins: 2
+
+at: DD
+with flow: 0
+flow rate: 20
+mins: 3
+
+at: CC
+with flow: 20
+flow rate: 20
+mins: 2
+
+at: AA
+with flow: 20
+flow rate: 20
+mins: 2
+
+at: EE
+with flow: 20
+flow rate: 20
+mins: 2
+
+at: FF
+with flow: 40
+flow rate: 20
+mins: 1
+
+at: DD
+with flow: 40
+flow rate: 20
+mins: 1
+
+at: EE
+with flow: 40
+flow rate: 23
+mins: 1
+
+at: II
+with flow: 0
+flow rate: 0
+mins: 4
+
+at: BB
+with flow: 0
+flow rate: 0
+mins: 4
+
+at: CC
+with flow: 0
+flow rate: 0
+mins: 3
+
+at: AA
+with flow: 0
+flow rate: 0
+mins: 3
+
+at: BB
+with flow: 0
+flow rate: 13
+mins: 3
+
+at: CC
+with flow: 13
+flow rate: 13
+mins: 2
+
+at: DD
+with flow: 26
+flow rate: 13
+mins: 1
+
+at: BB
+with flow: 26
+flow rate: 13
+mins: 1
+
+at: CC
+with flow: 26
+flow rate: 15
+mins: 1
+
+at: AA
+with flow: 13
+flow rate: 13
+mins: 2
+
+at: DD
+with flow: 26
+flow rate: 13
+mins: 1
+
+at: II
+with flow: 26
+flow rate: 13
+mins: 1
+
+at: BB
+with flow: 26
+flow rate: 13
+mins: 1
+
+at: EE
+with flow: 0
+flow rate: 0
+mins: 5
+
+at: FF
+with flow: 0
+flow rate: 0
+mins: 4
+
+at: DD
+with flow: 0
+flow rate: 0
+mins: 4
+
+at: EE
+with flow: 0
+flow rate: 3
+mins: 4
+
+at: DD
+with flow: 0
+flow rate: 20
+mins: 5
+
+at: BB
+with flow: 0
+flow rate: 0
+mins: 6
+
+at: CC
+with flow: 0
+flow rate: 2
+mins: 6
+
+at: AA
+with flow: 0
+flow rate: 0
+mins: 7
+
+at: EE
+with flow: 0
+flow rate: 0
+mins: 7
+
+at: DD
+with flow: 0
+flow rate: 20
+mins: 7
+
+at: BB
+with flow: 0
+flow rate: 0
+mins: 8
+
+at: CC
+with flow: 0
+flow rate: 2
+mins: 8
+
+at: AA
+with flow: 0
+flow rate: 0
+mins: 9
+
+at: EE
+with flow: 0
+flow rate: 0
+mins: 9
+
+at: DD
+with flow: 0
+flow rate: 20
+mins: 9
+
+at: BB
+with flow: 0
+flow rate: 0
+mins: 10
+
+at: CC
+with flow: 0
+flow rate: 2
+mins: 10
+
+at: AA
+with flow: 0
+flow rate: 0
+mins: 11
+
+at: EE
+with flow: 0
+flow rate: 0
+mins: 11
+
+at: DD
+with flow: 0
+flow rate: 20
+mins: 11
+
+at: BB
+with flow: 0
+flow rate: 0
+mins: 12
+
+at: CC
+with flow: 0
+flow rate: 2
+mins: 12
+
+at: AA
+with flow: 0
+flow rate: 0
+mins: 13
+
+at: EE
+with flow: 0
+flow rate: 0
+mins: 13
+
+at: DD
+with flow: 0
+flow rate: 20
+mins: 13
+
+at: BB
+with flow: 0
+flow rate: 0
+mins: 14
+
+at: CC
+with flow: 0
+flow rate: 2
+mins: 14
+
+at: AA
+with flow: 0
+flow rate: 0
+mins: 15
+
+at: EE
+with flow: 0
+flow rate: 0
+mins: 15
+
+at: DD
+with flow: 0
+flow rate: 20
+mins: 15
+
+at: BB
+with flow: 0
+flow rate: 0
+mins: 16
+
+at: CC
+with flow: 0
+flow rate: 2
+mins: 16
+
+at: AA
+with flow: 0
+flow rate: 0
+mins: 17
+
+at: EE
+with flow: 0
+flow rate: 0
+mins: 17
+
+at: DD
+with flow: 0
+flow rate: 20
+mins: 17
+
+at: BB
+with flow: 0
+flow rate: 0
+mins: 18
+
+at: CC
+with flow: 0
+flow rate: 2
+mins: 18
+
+at: AA
+with flow: 0
+flow rate: 0
+mins: 19
+
+at: EE
+with flow: 0
+flow rate: 0
+mins: 19
+
+at: DD
+with flow: 0
+flow rate: 20
+mins: 19
+
+at: BB
+with flow: 0
+flow rate: 0
+mins: 20
+
+at: CC
+with flow: 0
+flow rate: 2
+mins: 20
+
+at: AA
+with flow: 0
+flow rate: 0
+mins: 21
+
+at: EE
+with flow: 0
+flow rate: 0
+mins: 21
+
+at: DD
+with flow: 0
+flow rate: 20
+mins: 21
+
+at: BB
+with flow: 0
+flow rate: 0
+mins: 22
+
+at: CC
+with flow: 0
+flow rate: 2
+mins: 22
+
+at: AA
+with flow: 0
+flow rate: 0
+mins: 23
+
+at: EE
+with flow: 0
+flow rate: 0
+mins: 23
+
+at: DD
+with flow: 0
+flow rate: 20
+mins: 23
+
+at: BB
+with flow: 0
+flow rate: 0
+mins: 24
+
+at: CC
+with flow: 0
+flow rate: 2
+mins: 24
+
+at: AA
+with flow: 0
+flow rate: 0
+mins: 25
+
+at: BB
+with flow: 0
+flow rate: 13
+mins: 25
+
+at: CC
+with flow: 13
+flow rate: 13
+mins: 24
+
+at: AA
+with flow: 13
+flow rate: 13
+mins: 24
+
+at: JJ
+with flow: 0
+flow rate: 0
+mins: 28
+
+at: II
+with flow: 0
+flow rate: 0
+mins: 28
+
+at: BB
+with flow: 0
+flow rate: 0
+mins: 29
+
+at: AA
+with flow: 0
+flow rate: 0
+mins: 29
+

@@ -13,7 +13,10 @@
 using namespace std;
 using namespace std::chrono;
 
+typedef uint flow_t;
+
 struct Name : array<char, 2> {
+    Name(char zero, char one) : array{zero, one} {}
     Name(const smatch &match) {
         (*this)[0] = *match[0].first;
         (*this)[1] = *(match[0].first + 1);
@@ -32,7 +35,7 @@ ostream &operator<<(ostream &os, const Name &name) {
 }
 
 struct Valve {
-    int flowRate;
+    flow_t flowRate;
     vector<Name> tunnels;
 };
 
@@ -44,11 +47,48 @@ ostream &operator<<(ostream &os, const Valve &valve) {
     return os << "'";
 }
 
-uint recurse(const unordered_map<Name, Valve> &valves, Name currentValveName,
-             unordered_set<Name> released, uint currentFlow, size_t currentHash,
-             unordered_map<size_t, uint> memo) {
-    auto newHash = currentHash ^ (std::hash<Name>{}(currentValveName) << 1);
-    return 0;
+flow_t recurse(const unordered_map<Name, Valve> &valves, Name currentValveName,
+               unordered_set<Name> released, flow_t currentFlowRate,
+               flow_t currentFlow, uint minutesRemaining, size_t currentHash,
+               unordered_map<size_t, flow_t> &memo) {
+    ofstream{"out", std::ios::app}
+        << "at: " << currentValveName << "\nwith flow: " << currentFlow
+        << "\nflow rate: " << currentFlowRate << "\nmins: " << minutesRemaining
+        << "\n\n";
+    decltype(memo.cbegin()) memory;
+    if ((memory = memo.find(currentHash)) != memo.cend()) {
+        return memory->second;
+    }
+
+    auto newFlow = currentFlow + currentFlowRate;
+    if (!--minutesRemaining) {
+        return newFlow;
+    }
+
+    size_t newHash;
+    flow_t maxFlow = 0;
+    auto &valve = valves.at(currentValveName);
+
+    for (auto newValveName : valve.tunnels) {
+        newHash = currentHash ^ (hash<Name>{}(newValveName) << 1);
+        maxFlow = max(maxFlow,
+                      recurse(valves, newValveName, released, currentFlowRate,
+                              newFlow, minutesRemaining, newHash, memo));
+    }
+
+    // if this valve hasn't been released yet
+    if (released.find(currentValveName) == released.end()) {
+        auto newFlowRate = currentFlowRate + valve.flowRate;
+        released.insert(currentValveName);
+        // rehashing current name represents turning valve on
+        newHash = currentHash ^ hash<Name>{}(currentValveName);
+        maxFlow = max(maxFlow,
+                      recurse(valves, currentValveName, released, newFlowRate,
+                              newFlow, minutesRemaining, newHash, memo));
+    }
+
+    memo[currentHash] = maxFlow;
+    return maxFlow;
 }
 
 int main() {
@@ -67,7 +107,7 @@ int main() {
         Valve valve;
 
         regex_search(line, match, namePattern);
-        Name name{match};
+        Name valveName{match};
 
         for (auto remainder = match.suffix().first;
              regex_search(remainder, line.cend(), match, namePattern);
@@ -76,9 +116,9 @@ int main() {
         }
 
         regex_search(line, match, flowRatePattern);
-        valve.flowRate = stoi(match.str());
+        valve.flowRate = std::stoi(match.str());
 
-        valves[name] = move(valve);
+        valves[valveName] = move(valve);
     }
 
     for (const auto &nameAndValve : valves) {
@@ -87,8 +127,16 @@ int main() {
     }
 
     unordered_set<Name> released;
-    unordered_map<size_t, uint> memo;
-    uint flow = 0;
+    unordered_map<size_t, flow_t> memo;
+    flow_t currentFlowRate = 0;
+    flow_t currentFlow = 0;
+    uint minutesRemaining = 30;
+
+    auto finalFlow =
+        recurse(valves, {'A', 'A'}, move(released), currentFlowRate,
+                currentFlow, minutesRemaining, 0, memo);
+
+    cout << "final flow: " << finalFlow << '\n';
 
     cout << "elapsed: "
          << duration_cast<duration<double, milli>>(steady_clock::now() - time)
