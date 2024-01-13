@@ -1,21 +1,25 @@
 #include <array>
+#include <bitset>
 #include <chrono>
 #include <fstream>
 #include <iostream>
 #include <regex>
 #include <string>
+#include <tuple>
 #include <unordered_map>
-#include <unordered_set>
-#include <vector>
 
 #define INPUT "example"
+#define VALVES_LEN 10
+// #define INPUT "input"
+// #define VALVES_LEN 51
 
 using namespace std;
 using namespace std::chrono;
 
-typedef uint flow_t;
+typedef u_int64_t pressure_t;
 
 struct Name : array<char, 2> {
+    Name() {}
     Name(char zero, char one) : array{zero, one} {}
     Name(const smatch &match) {
         (*this)[0] = *match[0].first;
@@ -23,76 +27,64 @@ struct Name : array<char, 2> {
     }
 };
 
-template <>
-struct std::hash<Name> {
-    size_t operator()(const Name &name) const noexcept {
-        return hash<char>{}(name[0]) ^ (hash<char>{}(name[1]) << 1);
-    }
-};
-
-ostream &operator<<(ostream &os, const Name &name) {
-    return os << name[0] << name[1];
-}
-
 struct Valve {
-    flow_t flowRate;
-    vector<Name> tunnels;
+    pressure_t flowRate;
+    array<u_int8_t, 5> tunnels;
+    u_int8_t tunnelsLen;
 };
 
-ostream &operator<<(ostream &os, const Valve &valve) {
-    os << "flow rate: " << valve.flowRate << " tunnels: '";
-    for (const auto &name : valve.tunnels) {
-        os << name << ", ";
-    }
-    return os << "'";
-}
+typedef tuple<u_int8_t, bitset<VALVES_LEN>, u_int8_t> memokey_t;
 
-flow_t recurse(const unordered_map<Name, Valve> &valves, Name currentValveName,
-               unordered_set<Name> released, flow_t currentFlowRate,
-               flow_t currentFlow, uint minutesRemaining, size_t currentHash,
-               unordered_map<size_t, flow_t> &memo) {
-    ofstream out{"out", std::ios::app};
-    out << "at: " << currentValveName << "\nwith flow: " << currentFlow
-        << "\nflow rate: " << currentFlowRate << "\nmins: " << minutesRemaining
-        << "\nreleased: ";
-    for (auto name : released) {
-        out << name << ", ";
+template <>
+struct std::hash<memokey_t> {
+    size_t operator()(const memokey_t &memoKey) const noexcept {
+        size_t seed = 0;
+
+#define HASH_COMBINE(i)                                                  \
+    seed ^= hash<tuple_element<i, memokey_t>::type>{}(get<i>(memoKey)) + \
+            0x9e3779b9 + (seed << 6) + (seed >> 2)
+
+        HASH_COMBINE(0);
+        HASH_COMBINE(1);
+        HASH_COMBINE(2);
+        return seed;
     }
-    out << "\n\n";
-    decltype(memo.cbegin()) memory;
-    if ((memory = memo.find(currentHash)) != memo.cend()) {
+};
+
+pressure_t highestPressure(const array<Valve, VALVES_LEN> &valves,
+                           u_int8_t currentValve, bitset<VALVES_LEN> released,
+                           u_int8_t minutesRemaining,
+                           unordered_map<memokey_t, pressure_t> &memo) {
+    if (minutesRemaining == 0) {
+        return 0;
+    }
+
+    memokey_t memoKey = make_tuple(currentValve, released, minutesRemaining);
+    auto memory = memo.find(memoKey);
+    if (memory != memo.cend()) {
         return memory->second;
     }
 
-    auto newFlow = currentFlow + currentFlowRate;
-    if (!--minutesRemaining) {
-        return newFlow;
+    pressure_t maxPressure = 0;
+    auto valve = valves[currentValve];
+
+    for (u_int8_t i = 0; i < valve.tunnelsLen; i++) {
+        maxPressure =
+            max(maxPressure, highestPressure(valves, valve.tunnels[i], released,
+                                             minutesRemaining - 1, memo));
     }
 
-    size_t newHash;
-    flow_t maxFlow = 0;
-    auto &valve = valves.at(currentValveName);
-
-    for (auto newValveName : valve.tunnels) {
-        newHash = currentHash ^ (hash<Name>{}(newValveName) << 1);
-        maxFlow = max(maxFlow,
-                      recurse(valves, newValveName, released, currentFlowRate,
-                              newFlow, minutesRemaining, newHash, memo));
+    if (!released[currentValve]) {
+        released[currentValve] = true;
+        auto pressureAfterReleasing =
+            highestPressure(valves, currentValve, released,
+                            minutesRemaining - 1, memo) +
+            (valve.flowRate * (minutesRemaining - 1));
+        maxPressure = max(maxPressure, pressureAfterReleasing);
     }
 
-    // if this valve hasn't been released yet
-    if (released.find(currentValveName) == released.end()) {
-        auto newFlowRate = currentFlowRate + valve.flowRate;
-        released.insert(currentValveName);
-        // rehashing current name represents turning valve on
-        newHash = currentHash ^ hash<Name>{}(currentValveName);
-        maxFlow = max(maxFlow,
-                      recurse(valves, currentValveName, released, newFlowRate,
-                              newFlow, minutesRemaining, newHash, memo));
-    }
-
-    memo[currentHash] = maxFlow;
-    return maxFlow;
+    memo[memoKey] = maxPressure;
+    return maxPressure;
 }
 
 int main() {
@@ -101,46 +93,58 @@ int main() {
     ifstream input{INPUT};
     string line;
 
-    const regex namePattern{"[A-Z]{2}"};
-    const regex flowRatePattern{"\\d+"};
+    regex namePattern{"[A-Z]{2}"};
+    regex flowRatePattern{"\\d+"};
     smatch match;
 
-    unordered_map<Name, Valve> valves;
+    array<Valve, VALVES_LEN> valves;
+    array<Name, VALVES_LEN> valveNames;
+    array<array<Name, 5>, VALVES_LEN> valveTunnelsArr;
 
-    while (getline(input, line)) {
+    for (u_int8_t i = 0; i < VALVES_LEN; i++) {
+        getline(input, line);
+
         Valve valve;
 
         regex_search(line, match, namePattern);
         Name valveName{match};
 
-        for (auto remainder = match.suffix().first;
-             regex_search(remainder, line.cend(), match, namePattern);
-             remainder = match.suffix().first) {
-            valve.tunnels.push_back({match});
+        array<Name, 5> valveTunnels;
+        u_int8_t tunnelsLen = 0;
+        for (auto rem = match.suffix().first;
+             regex_search(rem, line.cend(), match, namePattern);
+             rem = match.suffix().first) {
+            valveTunnels[tunnelsLen++] = {match};
         }
+        valve.tunnelsLen = tunnelsLen;
 
         regex_search(line, match, flowRatePattern);
         valve.flowRate = std::stoi(match.str());
 
-        valves[valveName] = move(valve);
+        valves[i] = valve;
+        valveNames[i] = valveName;
+        valveTunnelsArr[i] = valveTunnels;
     }
 
-    for (const auto &nameAndValve : valves) {
-        cout << "name: " << nameAndValve.first << "\nvalve:\n"
-             << nameAndValve.second << '\n';
+#define VALVE_INDEX(name) \
+    find(valveNames.begin(), valveNames.end(), name) - valveNames.begin()
+
+    for (u_int8_t i = 0; i < VALVES_LEN; i++) {
+        for (u_int8_t j = 0; j < valves[i].tunnelsLen; j++) {
+            valves[i].tunnels[j] = VALVE_INDEX(valveTunnelsArr[i][j]);
+        }
     }
 
-    unordered_set<Name> released;
-    unordered_map<size_t, flow_t> memo;
-    flow_t currentFlowRate = 0;
-    flow_t currentFlow = 0;
-    uint minutesRemaining = 30;
+    bitset<VALVES_LEN> released;
+    unordered_map<memokey_t, pressure_t> memo;
+    u_int8_t minutesRemaining = 30;
+    auto aaName = Name{'A', 'A'};
+    u_int8_t currentValve = VALVE_INDEX(aaName);
 
-    auto finalFlow =
-        recurse(valves, {'A', 'A'}, move(released), currentFlowRate,
-                currentFlow, minutesRemaining, 0, memo);
+    auto finalPressure = highestPressure(valves, currentValve, move(released),
+                                         minutesRemaining, memo);
 
-    cout << "final flow: " << finalFlow << '\n';
+    cout << "final pressure: " << finalPressure << '\n';
 
     cout << "elapsed: "
          << duration_cast<duration<double, milli>>(steady_clock::now() - time)
