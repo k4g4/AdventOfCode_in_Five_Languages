@@ -8,10 +8,10 @@
 #include <tuple>
 #include <unordered_map>
 
-#define INPUT "example"
-#define VALVES_LEN 10
-// #define INPUT "input"
-// #define VALVES_LEN 51
+// #define INPUT "example"
+// #define VALVES_LEN 10
+#define INPUT "input"
+#define VALVES_LEN 51
 
 using namespace std;
 using namespace std::chrono;
@@ -74,7 +74,8 @@ pressure_t highestPressure(const array<Valve, VALVES_LEN> &valves,
                                              minutesRemaining - 1, memo));
     }
 
-    if (!released[currentValve]) {
+    // if flow rate isn't zero and this valve has yet to be released
+    if (valve.flowRate && !released[currentValve]) {
         released[currentValve] = true;
         auto pressureAfterReleasing =
             highestPressure(valves, currentValve, released,
@@ -93,8 +94,8 @@ int main() {
     ifstream input{INPUT};
     string line;
 
-    regex namePattern{"[A-Z]{2}"};
-    regex flowRatePattern{"\\d+"};
+    const regex namePattern{"[A-Z]{2}"};
+    const regex flowRatePattern{"\\d+"};
     smatch match;
 
     array<Valve, VALVES_LEN> valves;
@@ -111,15 +112,15 @@ int main() {
 
         array<Name, 5> valveTunnels;
         u_int8_t tunnelsLen = 0;
-        for (auto rem = match.suffix().first;
-             regex_search(rem, line.cend(), match, namePattern);
-             rem = match.suffix().first) {
+        for (auto suffix = match.suffix().first;
+             regex_search(suffix, line.cend(), match, namePattern);
+             suffix = match.suffix().first) {
             valveTunnels[tunnelsLen++] = {match};
         }
         valve.tunnelsLen = tunnelsLen;
 
         regex_search(line, match, flowRatePattern);
-        valve.flowRate = std::stoi(match.str());
+        valve.flowRate = stoi(match.str());
 
         valves[i] = valve;
         valveNames[i] = valveName;
