@@ -12,16 +12,16 @@ using namespace std::chrono;
 // #define INPUT "example"
 // #define BLUEPRINTS 2
 #define INPUT "input"
-#define BLUEPRINTS 30
+#define BLUEPRINTS 3
 
-#define TOTAL_MINUTES 24
+#define TOTAL_MINUTES 32
 
-typedef uint Minutes;
-typedef uint Ore;
-typedef uint Clay;
-typedef uint Obsidian;
-typedef uint Geode;
-typedef uint Robot;
+typedef uint8_t Minutes;
+typedef uint32_t Ore;
+typedef uint32_t Clay;
+typedef uint32_t Obsidian;
+typedef uint32_t Geode;
+typedef uint8_t Robot;
 
 struct Blueprint {
     Ore oreBot;
@@ -98,32 +98,6 @@ Geode gather(const Resources resources, const Minutes minutes,
 
     Geode maxGeodes = 0;
 
-    if (resources.ore >= blueprint.oreBot) {
-        Resources collected = resources.collect();
-        collected.oreBots += 1;
-        collected.ore -= blueprint.oreBot;
-        maxGeodes =
-            max(maxGeodes, gather(collected, minutes - 1, blueprint, memo));
-    }
-
-    if (resources.ore >= blueprint.clayBot) {
-        Resources collected = resources.collect();
-        collected.clayBots += 1;
-        collected.ore -= blueprint.clayBot;
-        maxGeodes =
-            max(maxGeodes, gather(collected, minutes - 1, blueprint, memo));
-    }
-
-    if (resources.clay >= blueprint.obsidianBot.first &&
-        resources.ore >= blueprint.obsidianBot.second) {
-        Resources collected = resources.collect();
-        collected.obsidianBots += 1;
-        collected.clay -= blueprint.obsidianBot.first;
-        collected.ore -= blueprint.obsidianBot.second;
-        maxGeodes =
-            max(maxGeodes, gather(collected, minutes - 1, blueprint, memo));
-    }
-
     if (resources.obsidian >= blueprint.geodeBot.first &&
         resources.ore >= blueprint.geodeBot.second) {
         Resources collected = resources.collect();
@@ -132,13 +106,40 @@ Geode gather(const Resources resources, const Minutes minutes,
         collected.ore -= blueprint.geodeBot.second;
         maxGeodes =
             max(maxGeodes, gather(collected, minutes - 1, blueprint, memo));
-    }
+    } else {
+        if (resources.clay >= blueprint.obsidianBot.first &&
+            resources.ore >= blueprint.obsidianBot.second) {
+            Resources collected = resources.collect();
+            collected.obsidianBots += 1;
+            collected.clay -= blueprint.obsidianBot.first;
+            collected.ore -= blueprint.obsidianBot.second;
+            maxGeodes =
+                max(maxGeodes, gather(collected, minutes - 1, blueprint, memo));
+        }
 
-    Ore maxOre = max({blueprint.oreBot, blueprint.clayBot,
-                      blueprint.obsidianBot.second, blueprint.geodeBot.second});
-    if (resources.ore < maxOre) {
-        maxGeodes = max(maxGeodes, gather(resources.collect(), minutes - 1,
-                                          blueprint, memo));
+        if (resources.ore >= blueprint.clayBot) {
+            Resources collected = resources.collect();
+            collected.clayBots += 1;
+            collected.ore -= blueprint.clayBot;
+            maxGeodes =
+                max(maxGeodes, gather(collected, minutes - 1, blueprint, memo));
+        }
+
+        if (resources.ore >= blueprint.oreBot) {
+            Resources collected = resources.collect();
+            collected.oreBots += 1;
+            collected.ore -= blueprint.oreBot;
+            maxGeodes =
+                max(maxGeodes, gather(collected, minutes - 1, blueprint, memo));
+        }
+
+        Ore maxOre =
+            max({blueprint.oreBot, blueprint.clayBot,
+                 blueprint.obsidianBot.second, blueprint.geodeBot.second});
+        if (resources.ore < maxOre) {
+            maxGeodes = max(maxGeodes, gather(resources.collect(), minutes - 1,
+                                              blueprint, memo));
+        }
     }
 
     Geode geodes = resources.geodeBots + maxGeodes;
@@ -170,14 +171,13 @@ int main() {
         nextInt(blueprint.geodeBot.first);
     }
 
-    ulong quality = 0;
+    ulong total = 1;
     for (int i = 0; i < BLUEPRINTS; i++) {
         Memo memo;
-        quality +=
-            (i + 1) * gather(Resources{}, TOTAL_MINUTES, blueprints[i], memo);
+        total *= gather(Resources{}, TOTAL_MINUTES, blueprints[i], memo);
     }
 
-    cout << "sum of quality levels: " << quality << endl;
+    cout << "product of max geodes: " << total << endl;
 
     cout << "elapsed: "
          << duration_cast<duration<double, milli>>(steady_clock::now() - time)
